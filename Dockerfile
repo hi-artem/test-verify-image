@@ -1,1 +1,1 @@
-FROM curlimages/curl:8.4.0
+FROM public.ecr.aws/ubuntu/ubuntu:edge
