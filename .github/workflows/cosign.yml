@@ -56,7 +56,7 @@ jobs:
       - name: Sign image with a key
         run: |
           echo -n $COSIGN_PRIVATE_KEY_BASE64 | base64 --decode > cosign.key
-          cosign sign --yes --key file://cosign.key "${TAGS}@${DIGEST}"
+          cosign sign --yes --key cosign.key "${TAGS}@${DIGEST}"
         env:
           TAGS: ${{ steps.docker_meta.outputs.tags }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
